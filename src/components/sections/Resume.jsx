@@ -21,7 +21,7 @@ export const Resume = React.forwardRef((props, ref) => {
         
         <Card className="max-w-3xl w-full p-12 md:p-16 flex flex-col items-center text-center group cursor-pointer">
           <div className="w-16 h-16 border border-primary/20 group-hover:border-primary/50 flex items-center justify-center mb-8 rotate-45 transition-colors duration-500">
-             <div className="absolute font-serif italic text-2xl -rotate-45 text-primary">R</div>
+              <div className="absolute font-serif italic text-2xl -rotate-45 text-primary">R</div>
           </div>
           
           <h2 className="text-3xl md:text-4xl font-serif text-primary mb-2">Curriculum Vitae</h2>
@@ -32,11 +32,23 @@ export const Resume = React.forwardRef((props, ref) => {
           </p>
           
           <Button variant="primary" className="group-hover:px-12 transition-all duration-300"
-                  onClick={() => {
-                      const link = document.createElement("a");
-                      link.href = "/priyanshuResume.pdf";
-                      link.click();
-                    }}>
+                  onClick={async () => {
+                    const response = await fetch("/priyanshuResume.pdf");
+                    const blob = await response.blob();
+                    
+                    const url = window.URL.createObjectURL(blob);
+                    const link = document.createElement("a");
+                    
+                    link.href = url;
+                    link.setAttribute("download", "Priyanshu_Resume.pdf"); 
+                    
+                    document.body.appendChild(link);
+                    link.click();
+                    
+                    link.parentNode.removeChild(link);
+                    window.URL.revokeObjectURL(url);
+                  }}
+                  >
             Download Resume
           </Button>
         </Card>

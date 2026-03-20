@@ -33,13 +33,27 @@ export const Hero = ({ projectsRef }) => {
           
           <div className="flex flex-wrap items-center gap-4 pt-4">
             <Button variant="primary" onClick={scrollToProjects}>Explore Work</Button>
-            <Button variant="ghost"
-                    onClick={() => {
-                      const link = document.createElement("a");
-                      link.href = "/priyanshuResume.pdf";
-                      link.click();
-                    }}
-            >Download Resume</Button>
+            <Button
+              variant="ghost"
+              onClick={async () => {
+                const response = await fetch("/priyanshuResume.pdf");
+                const blob = await response.blob();
+                
+                const url = window.URL.createObjectURL(blob);
+                const link = document.createElement("a");
+                
+                link.href = url;
+                link.setAttribute("download", "Priyanshu_Resume.pdf"); 
+                
+                document.body.appendChild(link);
+                link.click();
+                
+                link.parentNode.removeChild(link);
+                window.URL.revokeObjectURL(url);
+              }}
+            >
+              Download Resume
+            </Button>
           </div>
         </div>
 
