@@ -3,7 +3,7 @@
 A sleek, modern developer portfolio built with React and Vite. Designed to showcase projects, skills, and certifications with a focus on clean aesthetics and smooth user experiences.
 
 ## 🌐 Live Preview
-- [Live Demo](https://employee-lms-silk.vercel.app/)
+- [Live Demo](https://priyanshudotdev.vercel.app/)
 
 ## ✨ Features
 
