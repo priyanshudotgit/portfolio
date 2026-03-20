@@ -34,8 +34,7 @@ export const Resume = React.forwardRef((props, ref) => {
           <Button variant="primary" className="group-hover:px-12 transition-all duration-300"
                   onClick={() => {
                       const link = document.createElement("a");
-                      link.href = "/CV2025.pdf";
-                      link.download = "priyanshuResume.pdf";
+                      link.href = "/priyanshuResume.pdf";
                       link.click();
                     }}>
             Download Resume

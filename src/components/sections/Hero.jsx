@@ -36,8 +36,7 @@ export const Hero = ({ projectsRef }) => {
             <Button variant="ghost"
                     onClick={() => {
                       const link = document.createElement("a");
-                      link.href = "/CV2025.pdf";
-                      link.download = "priyanshuResume.pdf";
+                      link.href = "/priyanshuResume.pdf";
                       link.click();
                     }}
             >Download Resume</Button>
