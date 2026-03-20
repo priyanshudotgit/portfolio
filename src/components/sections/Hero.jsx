@@ -58,15 +58,21 @@ export const Hero = ({ projectsRef }) => {
           </div>
 
           {/* Floating Artifact */}
-          <div className="relative z-10 w-48 h-64 md:w-64 md:h-80 bg-tan border border-primary/20 shadow-2xl animate-floating flex flex-col p-4 items-center justify-center group overflow-hidden">
-            <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-500"></div>
+          <div className="relative z-10 w-48 h-64 md:w-64 md:h-80 border border-primary/20 shadow-2xl animate-floating flex flex-col p-4 items-center justify-center group overflow-hidden"
+                style={{ 
+                  backgroundImage: 'url("/pfp4.jpg")', 
+                  backgroundSize: 'cover', 
+                  backgroundPosition: 'center',
+                  backgroundRepeat: 'no-repeat'
+                }}>
+            {/* <div className="absolute inset-0 bg-primary/5 group-hover:bg-primary/10 transition-colors duration-500"></div>
             <div className="w-16 h-16 border-[0.5px] border-primary/40 rotate-45 flex items-center justify-center mb-8 group-hover:scale-110 transition-transform duration-700">
               <div className="w-8 h-8 border-[0.5px] border-gold rotate-45"></div>
             </div>
             <div className="text-center font-sans">
               <span className="block text-[10px] uppercase tracking-[0.3em] text-primary/60 mb-2">Artifact No. 001</span>
               <div className="w-12 h-[1px] bg-primary/30 mx-auto"></div>
-            </div>
+            </div> */}
           </div>
           
         </div>
